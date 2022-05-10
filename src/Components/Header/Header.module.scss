@@ -23,7 +23,7 @@ header {
             position: absolute;
             flex-direction: column;
             right: 0;
-            top: 71px;
+            top: 62px;
             background: white;
         }
             .navLinks{
@@ -37,6 +37,9 @@ header {
     }
     .navActive {
         display: flex;
+        background-color: white;
+        z-index: 20;
+        align-items: center;  
     }
     .navInactive {
         @media (max-width: 624px){
