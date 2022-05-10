@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import About from "../Pages/About/About"
 import Details from "../Pages/Details/Details"
+import Favorites from "../Pages/Favorites/Favorites"
 import Home from "../Pages/Home/Home"
 
 
@@ -12,6 +13,7 @@ function RoutesMain() {
         <Route path="/" element={<Home />}/>
         <Route path="/about" element={<About />}/>
         <Route path="/details" element={<Details />}/>
+        <Route path="/myfavorites" element={<Favorites />}/>
         {/* <Route path="*" element={<NotFound/>}/> */}
       </Routes>
     </BrowserRouter>

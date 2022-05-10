@@ -1,16 +1,14 @@
 import React from 'react'
 import Layout from '../../Components/Layout/Layout'
-import SearchBar from '../../Components/SearchBar/SearchBar'
 
-
-function Home() {
+function Favorites() {
   return (
     <>
     <Layout>
-      <SearchBar />
+      <h1> My favorites</h1>
     </Layout>
     </>
   )
 }
 
-export default Home
+export default Favorites

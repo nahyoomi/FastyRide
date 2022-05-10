@@ -1,0 +1,50 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    /* position: fixed; */
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+    .burguerBtn {
+        display: none;
+        @media(max-width: 624px){
+            display: inline-block;
+        }
+    }
+    .logo h1 {
+        cursor: pointer;
+    }
+    .nav {
+        display: flex;
+        @media(max-width: 624px){
+            position: absolute;
+            flex-direction: column;
+            right: 0;
+            top: 62px;
+            background: white;
+        }
+            .navLinks{
+                margin: 0 10px;
+                color: black;
+                padding: 5px 15px;
+                border-radius: 100px;
+                transition:all 0.5s ease-in-out;
+                text-decoration: none; 
+            } 
+    }
+    .navActive {
+        display: flex;
+        background-color: white;
+        z-index: 20;
+        align-items: center;  
+    }
+    .navInactive {
+        @media (max-width: 624px){
+          display: none;  
+        } 
+    } 
+}
+

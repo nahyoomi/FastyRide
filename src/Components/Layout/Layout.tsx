@@ -1,8 +1,18 @@
 import React from 'react'
+import Footer from '../Footer/Footer'
+import Header from '../Header/Header'
 
-function Layout() {
+interface Props{
+  children : JSX.Element
+}
+ 
+function Layout({children}: Props) {
   return (
-    <div>Layout</div>
+    <>
+    <Header/>
+    <main>{children}</main>
+    <Footer />
+    </>
   )
 }
 
