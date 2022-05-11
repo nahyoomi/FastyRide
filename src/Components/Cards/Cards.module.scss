@@ -1,0 +1,82 @@
+.allCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px 0 ;
+    
+    .linkDetails {
+        text-decoration: none;
+        color: black;
+    }
+    .cards{
+        margin: 10px;
+        list-style: none;
+    }
+    .imgCard {
+        width:350px;
+        height: 350px;
+        position: relative;
+        border-radius: 5px;
+        text-align: left;
+        -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+        -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+        -o-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+        box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);  
+        .cardImage {
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 5px 5px 0px 0px;
+            img {
+                width:100%;
+                border-radius: 5px 5px 0px 0px;
+                -webkit-transition: all 0.8s;
+                -moz-transition: all 0.8s;
+                -o-transition: all 0.8s;
+                transition: all 0.8s;
+            }
+            .cardCaption{
+                position: absolute;
+                width: 100%;
+                z-index: 1;
+                top: 10px;
+                right: 15px;
+                color: #fff;
+                text-align: end;
+            }
+        }
+        
+        .cardImage:hover img {
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -o-transform: scale(1.1);
+            transform: scale(1.1);
+        }      
+    }
+}
+
+.cardInfo {
+    padding: 10px;
+}
+.address  {
+    color: #7d7676;
+    font-size: 12px;
+    text-align: initial;
+}
+.cardWish{
+    z-index: 10000;
+    color: white;
+    position: absolute;
+    top: 9px;
+    font-size: 20px;
+    left: 16px;
+    cursor: pointer;
+    &:hover{
+        color: red;
+       transform: scale(1.1);
+    }
+}
+.cardTittle {
+    font-weight: bold;
+    font-size: large;
+}
