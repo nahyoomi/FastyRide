@@ -1,8 +1,9 @@
 .footer {
-    background-color: black;
+    background-color: #fffffe;
     position: absolute;
     width: 100%;
     height: auto;
+    text-align: center;
     .socialMedia {
         padding-left: 0;
         margin-left: -5px;
@@ -14,10 +15,15 @@
             padding: 20px;
             font-size: 200%;
         } 
+        
+    }
+    span {
+        font-size: 12px;
+        font-weight: bold;
     }
    
     .brandedIcon {
-        color: white;
+        color: #272343;
         text-decoration: none;
         display: inline-block;
         font: normal normal normal 14px/1;
@@ -25,10 +31,10 @@
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
     }
+    .footer .socialMedia .icons:hover {
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+    }
     
-}
-.footer .socialMedia .icons:hover {
-    -webkit-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    transform: scale(1.3);
 }

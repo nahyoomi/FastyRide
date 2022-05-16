@@ -1,7 +1,10 @@
 .container {
-    
     width: 100%;
     height: 100%;
+    @media(min-width:624px){
+        display: flex;
+        padding: 15px;
+    }
     
     .background {
         width: 100%;
@@ -15,6 +18,9 @@
     .map {
         display: flex;
         justify-content: center;
+        @media(min-width: 624px){
+            width: 700px;  
+        }
        
     }
     .placeDetails {
@@ -27,10 +33,11 @@
             padding: 30px 16px;
             .place {
                 font-size: 20px;
-                text-align: start;
                 font-weight: bold;
-                padding-left: 15px;
-                letter-spacing: 1px; 
+                letter-spacing: 1px;
+                span {
+                    font-size: 12px;
+                } 
             }
             .location {
                 font-size: 12px;
@@ -39,18 +46,17 @@
                 color: gray; 
             }
             .description {
-                font-size: 12px;
+                font-size: 16px;
                 text-align: start;
-                padding: 24px 15px;
+                padding: 15px 15px; 
             }
-            .rate {
+            .more {
+                display:flex;
+                align-items: center;
+                padding: 0 15px;
                 background-color: #eaeaeb;
                 box-shadow: 0 1px 12px #b8c6db;
-                strong {
-                    padding-left: 5px;
-                }
             }
-            
         }
         
     }

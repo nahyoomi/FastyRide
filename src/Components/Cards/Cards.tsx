@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons'; 
 
 function Cards({ places }: PropsCard) {
+
   useEffect(() => {}, [places]);
   return (
     <>
@@ -20,11 +21,12 @@ function Cards({ places }: PropsCard) {
                   <span className={styles.cardCaption}>
                     {item.location.locality}
                   </span>
-                  <img src="https://images.pexels.com/photos/169677/pexels-photo-169677.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                  <img src="https://images.pexels.com/photos/169677/pexels-photo-169677.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/>
                   <p className={styles.cardWish}>
-                    <FontAwesomeIcon icon={faHeart} />
-                  </p>  
-                </div>
+                    <FontAwesomeIcon icon={faHeart} />  
+                  </p>
+                    
+                </div> 
                 <div className={styles.cardInfo}>
                   <p className={styles.cardTittle}>
                     <span className={styles.cardIcon}>
@@ -34,8 +36,6 @@ function Cards({ places }: PropsCard) {
                   </p>
                   <p> {item.categories[0].name} </p>
                   <p className={styles.address}>{item.location.formatted_address}</p>
-                  
-
                 </div>
                 
             </div>

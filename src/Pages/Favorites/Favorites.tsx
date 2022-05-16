@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Children } from 'react'
+import Cards from '../../Components/Cards/Cards'
 import Layout from '../../Components/Layout/Layout'
 
 function Favorites() {
@@ -6,6 +7,7 @@ function Favorites() {
     <>
     <Layout>
       <h1> My favorites</h1>
+      
     </Layout>
     </>
   )

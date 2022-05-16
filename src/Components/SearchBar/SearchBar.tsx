@@ -5,6 +5,8 @@ import { getPlace } from '../../Utils/Service';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'; 
 import styles from './SearchBar.module.scss'
+import Weather from '../Weather/Weather';
+import Filter from '../Filter/Filter';
 
 
 export default function SearchBar({/* city,setCity, */setPlace}: Props) {
@@ -25,17 +27,16 @@ export default function SearchBar({/* city,setCity, */setPlace}: Props) {
   return (
     <form onSubmit={handleSubmit(onSubmit)}
       className={styles.searchBox}>
-      <p className={styles.tittle}>Where would you like to go today?</p>
       <input {...register("location",{required:true, maxLength:50, minLength:3})}
         className={styles.searchInput}
         type='text'
-        placeholder='Search something...'/>
-       
+        placeholder='Where are you going today?'/>
       <button className={styles.searchBtn}>  
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </button>
       {errors.location?.type === 'required' && <p className={styles.errorMsg}>Location is required</p>}
       {errors.location?.type === 'minLength' && <p className={styles.errorMsg}>Location must have more than three characters</p>}
+      <Filter />
     </form>  
   )
 }

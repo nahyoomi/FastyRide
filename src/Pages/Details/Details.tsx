@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import Layout from '../../Components/Layout/Layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import styles from './Details.module.scss'
+import Weather from '../../Components/Weather/Weather';
 
 const containerStyle = {
   width: '90%',
-  height: '400px', 
+  height: '300px', 
 };
 
 const center = {
@@ -16,18 +17,24 @@ const center = {
 };
 
 function Details() {
+  
   return (
     <>
     <Layout>
       <div className={styles.container}>
+        <div className={styles.allDetails}>
         <div className={styles.background}></div>
         <div className={styles.placeDetails}>
           <div className={styles.chart}>
-            <p className={styles.place}>Place</p>
+            <p className={styles.place}>Place<span className={styles.rate}><FontAwesomeIcon icon={faStar} />4.5</span></p>
             <p className={styles.location}>Location</p>
             <p className={styles.description}>Description about the location where we are waiting for the api, in order to confirm.</p>
-            <span className={styles.rate}><FontAwesomeIcon icon={faStar} /><strong>4.5</strong></span>
+            <div className={styles.more}>
+              <Weather />
+            </div>
+            
           </div>
+        </div>
         </div>
         <div className={styles.map}>
           <LoadScript

@@ -24,6 +24,7 @@ function Footer() {
           target="_blank"
         ><FontAwesomeIcon icon={faFacebook} /></a></li>
       </ul>
+      <span>&#169; Nahomi Conde 2022</span>
     </footer>
   )
 }
