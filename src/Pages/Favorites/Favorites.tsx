@@ -25,11 +25,11 @@ function Favorites() {
     <>
     <Layout>
       <>
-      <p>Favoritos</p>
+      <p>Mi lista de favoritos</p>
       {
           locasStores.length > 0 
           ?   <Cards places={ locasStores }/> 
-          : <h3> No hay favoritos</h3>
+          : <h3>No se ha encontrado ninguna lista</h3>
         }
 
       </>

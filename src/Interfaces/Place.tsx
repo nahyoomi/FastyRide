@@ -36,6 +36,7 @@ export interface PlaceInterface {
 
   export interface IFormInput {
     location: string;
+    word: string
   }
 
   export interface Props {

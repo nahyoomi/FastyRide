@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../Contexts/DataContext";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate  } from "react-router-dom";
 import styles from "./Cards.module.scss";
 import { PlaceInterface, PropsCard } from "../../Interfaces/Place";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faV } from '@fortawesome/free-solid-svg-icons'; 
 
 function Cards({ places }: PropsCard) {
+  let navigate = useNavigate();
   const [ cards, SetCards ] = useState<Array<any>>([])
     const  {locasStores, setLocasStores}:any = useContext(AuthContext)
 
@@ -21,6 +22,11 @@ const handleWishlist =(item:PlaceInterface)=>{
   
 }
 
+const handleCard = (item:PlaceInterface) => {
+
+  navigate(`/details/${item.fsq_id}`);
+}
+
 useEffect(()=>{
   console.log("1",locasStores)
 },[locasStores])
@@ -32,7 +38,7 @@ useEffect(()=>{
          /*  <NavLink 
           className={styles.linkDetails}
           to ='/details'> */
-            <li key={item.fsq_id} className={styles.cards}>
+            <li key={item.fsq_id} className={styles.cards} onClick= {()=>{handleCard(item)}}>
             <div className={`${styles.imgCard}`}>
                 <div className={styles.cardImage}>
                   <span className={styles.cardCaption}>
