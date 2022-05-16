@@ -9,16 +9,14 @@ import Weather from '../Weather/Weather';
 import Filter from '../Filter/Filter';
 
 
-export default function SearchBar({/* city,setCity, */setPlace}: Props) {
+export default function SearchBar({setPlace}: Props) {
   const {register,formState: {errors}, handleSubmit} = useForm<IFormInput>();
   const [city, setCity] = useState("");
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    console.log(data)
     setCity(data.location)
     getPlace(data.location)
     .then(res => {
-      console.log(res.results)
       setPlace(res.results)
     })
   .catch(err => console.error(err));
