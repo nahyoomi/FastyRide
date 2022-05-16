@@ -1,0 +1,33 @@
+.container {
+    padding: 15px 0;
+    .containerMobile{
+        @media (min-width:624px ) {
+            display: none;
+        }
+    }
+    .containerDesktop {
+        display: flex;
+        justify-content: space-between;
+        @media(max-width:900px){
+            flex-wrap: wrap;
+            button {
+                margin: 5px;
+            }
+        }
+        @media (max-width:624px ) {
+            display: none;
+        }
+        button {
+            width: 130px;
+            height: 30px;
+            border-radius: 15px;
+            background:#ffffff;
+            border: none;
+            box-shadow: 0 4px 4px rgba(131, 67, 67, 0.25);
+            font-size: 16px; 
+            font-weight: bold;
+            color:#001e1d;
+            background-color:#e8e4e6;
+        }
+    }
+}

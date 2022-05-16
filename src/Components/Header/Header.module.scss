@@ -6,7 +6,7 @@ header {
     box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
     width: 100%;
     /* position: fixed; */
-    background-color: white;
+    background-color: #fffffe;
     transition: all 0.5s ease-in-out;
     .burguerBtn {
         display: none;
@@ -16,6 +16,10 @@ header {
     }
     .logo h1 {
         cursor: pointer;
+        .mainLogo {
+            text-decoration: none;
+            color: #001e1d; 
+        }
     }
     .nav {
         display: flex;
@@ -24,22 +28,27 @@ header {
             flex-direction: column;
             right: 0;
             top: 62px;
-            background: white;
+            background: #fffffe;
         }
             .navLinks{
-                margin: 0 10px;
-                color: black;
+                margin: 15px 10px;
+                font-weight: bold;
+                color: #272343;
                 padding: 5px 15px;
                 border-radius: 100px;
                 transition:all 0.5s ease-in-out;
-                text-decoration: none; 
+                text-decoration: none;
+                svg {
+                    padding-right: 5px;
+                } 
             } 
     }
     .navActive {
         display: flex;
-        background-color: white;
+        background-color: #fffffe;
         z-index: 20;
-        align-items: center;  
+        align-items: flex-start; 
+        
     }
     .navInactive {
         @media (max-width: 624px){

@@ -1,0 +1,69 @@
+.container {
+    width: 100%;
+    height: 100%;
+    @media(min-width:624px){
+        display: flex;
+        padding: 15px;
+    }
+    
+    .background {
+        max-width: 500px;
+       /*  width: 100%;
+        height: 400px; */
+/*         background-image: url(https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+ */        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        img{
+            max-width: 500px;
+            width: 100%;
+        }
+    
+    }
+    .map {
+        display: flex;
+        justify-content: center;
+        @media(min-width: 624px){
+            width: 700px;  
+        }
+       
+    }
+    .placeDetails {
+        max-width: 500px;
+        position: relative;
+        bottom: 35px;
+        background-color: white;
+        border-radius: 40px;
+        .chart {
+            text-align: center;
+            padding: 30px 16px;
+            .place {
+                font-size: 20px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                span {
+                    font-size: 12px;
+                } 
+            }
+            .location {
+                font-size: 12px;
+                text-align: start;
+                padding-left: 15px;
+                color: gray; 
+            }
+            .description {
+                font-size: 16px;
+                text-align: start;
+                padding: 15px 15px; 
+            }
+            .more {
+                display:flex;
+                align-items: center;
+                padding: 0 15px;
+                background-color: #eaeaeb;
+                box-shadow: 0 1px 12px #b8c6db;
+            }
+        }
+        
+    }
+}
