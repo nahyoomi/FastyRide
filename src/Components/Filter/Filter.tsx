@@ -14,6 +14,7 @@ function Filter() {
   return (
     <div className={styles.container}>
         <div className={styles.containerDesktop}>
+            <p>FIlter by: </p>
             <button type='button'>Supermarket</button>  
             <button type='button'>Restaurants</button>    
             <button type='button'>Pharmacy</button>  

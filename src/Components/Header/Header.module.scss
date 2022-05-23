@@ -2,7 +2,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 50px;
+    padding: 10px 10px;
     box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
     width: 100%;
     /* position: fixed; */
@@ -16,9 +16,11 @@ header {
     }
     .logo h1 {
         cursor: pointer;
+        padding: 10px;
+        color: #272343;
         .mainLogo {
             text-decoration: none;
-            color: #001e1d; 
+            color: #272343; 
         }
     }
     .nav {

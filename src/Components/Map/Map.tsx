@@ -1,4 +1,5 @@
 import React from 'react'
+import { PropsCard } from '../../Interfaces/Place';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 const containerStyle = {
@@ -11,7 +12,8 @@ const center = {
   lng: -73.988095
 };
 
-function Map() {
+
+function Map(/* {placesDetails}: PropsCard */) {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyCTP-QHMC05OTLZHIsp08JcK975S44vCDQ"

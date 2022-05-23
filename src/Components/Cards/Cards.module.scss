@@ -28,7 +28,9 @@
             margin: auto;
             overflow: hidden;
             border-radius: 5px 5px 0px 0px;
-            img {
+            .cardImg {
+                cursor: pointer;
+                height: 250px;
                 width:100%;
                 border-radius: 5px 5px 0px 0px;
                 -webkit-transition: all 0.8s;
@@ -64,20 +66,68 @@
     font-size: 12px;
     text-align: initial;
 }
-.cardWish{
-    z-index: 10000;
+.cardIcon{
+    z-index:100;
     color: white;
     position: absolute;
     top: 9px;
     font-size: 20px;
     left: 16px;
-    cursor: pointer;
+    /* cursor: pointer; */
     &:hover{
-        color: red;
+        /* color: red; */
        transform: scale(1.1);
     }
 }
 .cardTittle {
     font-weight: bold;
     font-size: large;
+    justify-content: space-between;
+    display: flex;
 }
+
+    .cardIWish{
+        color: rgb(48, 23, 23);
+        padding-right: 5px;
+        position: relative;
+        cursor: pointer;
+        &Text{
+            position: absolute;
+            left: -15px;
+            bottom: -28px;
+            font-size: 11px;
+            visibility: hidden;
+            text-align: center;
+        }
+        &:hover{
+            .cardIWishText{
+                visibility: visible;
+            }
+            color: red;
+           transform: scale(1.1);
+        }
+    }
+
+.cardImgModal{
+    max-width: 350px;
+    background-color: #fff;
+    a {
+        font-size: x-large;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 18px;
+        cursor: pointer;
+    }
+    &Gallery{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        .cardGallery{
+            margin-bottom :20px;
+            &:first-child{
+                display: none;
+            }
+        }
+    }
+}
+

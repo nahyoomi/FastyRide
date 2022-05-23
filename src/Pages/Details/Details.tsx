@@ -14,7 +14,7 @@ import Map from '../../Components/Map/Map';
 function Details() {
 
   let { id  }  = useParams();
-  const [placeDetails, setPlaceDetails] = useState<any>/* <Array<PlaceInterface>> */([])
+  const [placeDetails, setPlaceDetails]: any = useState<any>/* <Array<PlaceInterface>> */([]) 
   const [placePhoto, setPlacePhoto] = useState<any>/* <Array<PlaceInterface>> */([])
 
   useEffect(() => {
@@ -59,8 +59,8 @@ function Details() {
             <div className={styles.placeDetails}>
               <div className={styles.chart}>
                 <p className={styles.place}> {placeDetails.name} <span className={styles.rate}><FontAwesomeIcon icon={faStar} />4.5</span></p>
-                <p className={styles.location}>Location</p>
-                <p className={styles.description}>Description about the location where we are waiting for the api, in order to confirm.</p>
+                <p className={styles.location}>{placeDetails.location.locality}</p>
+                <p className={styles.description}> {placeDetails.location.formatted_address}</p>
                 <div className={styles.more}>
                   <Weather />
                 </div>
@@ -69,7 +69,7 @@ function Details() {
             </div>
             </div>
             <div className={styles.map}>
-              <Map />
+              <Map /*  placeDetails = {placeDetails} *//>
             </div>
           </div>
       }

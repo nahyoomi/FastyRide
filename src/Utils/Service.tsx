@@ -1,5 +1,5 @@
 import axios from 'axios';
-const URL="https://api.foursquare.com/v3/places/search?"
+const URL="https://api.foursquare.com/v3/places/search?fields=rating%2Ctips%2Cprice%2Cphotos%2Chours%2Ctel%2Cwebsite%2Cemail%2Cfsq_id%2Cname%2Cgeocodes%2Clocation%2Ccategories%2Cdescription&"
 const URL_BYID = "https://api.foursquare.com/v3/places/"
 
 export const getPlace = async(city:string) =>{ 
@@ -7,7 +7,7 @@ export const getPlace = async(city:string) =>{
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      Authorization: ' fsq3Z3orSWSRhpZgaafrcEHHNUvRYXGkQssKMmAV5mREHc8='
+      Authorization: 'fsq3TY1q58bnDc/7bQdBoSS30psmEmbkSGxnQyxAudv0ouA='
         }
     }
 
@@ -20,7 +20,7 @@ export const getPlace = async(city:string) =>{
       method: 'GET',
       headers: {
         Accept: 'application/json',
-        Authorization: ' fsq3Z3orSWSRhpZgaafrcEHHNUvRYXGkQssKMmAV5mREHc8='
+        Authorization: 'fsq3TY1q58bnDc/7bQdBoSS30psmEmbkSGxnQyxAudv0ouA='
           }
       }
   
@@ -33,7 +33,7 @@ export const getPlace = async(city:string) =>{
       method: 'GET',
       headers: {
         Accept: 'application/json',
-        Authorization: ' fsq3Z3orSWSRhpZgaafrcEHHNUvRYXGkQssKMmAV5mREHc8='
+        Authorization: 'fsq3TY1q58bnDc/7bQdBoSS30psmEmbkSGxnQyxAudv0ouA='
           }
       }
   
@@ -47,7 +47,7 @@ export const getPlace = async(city:string) =>{
       method: 'GET',
       headers: {
         Accept: 'application/json',
-        Authorization: ' fsq3Z3orSWSRhpZgaafrcEHHNUvRYXGkQssKMmAV5mREHc8='
+        Authorization: 'fsq3TY1q58bnDc/7bQdBoSS30psmEmbkSGxnQyxAudv0ouA='
           }
       }
   
