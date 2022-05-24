@@ -1,5 +1,5 @@
 .container {
-    padding: 15px 0;
+    padding: 15px 30px;
     .containerMobile{
         @media (min-width:624px ) {
             display: none;
@@ -8,19 +8,40 @@
     .containerDesktop {
         display: flex;
         justify-content: space-between;
-        @media(max-width:900px){
-            flex-wrap: wrap;
-            button {
-                margin: 5px;
-            }
+        max-width: 350px;
+        margin: 0 auto;
+        p{
+            text-align: center;
+            height: 30px;
+            background: #ffffff;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: #001e1d;
+            background-color: #e8e4e6;
+            margin-bottom: 3px;
         }
+        .containerButton{
+            @media (max-width:624px ) {
+                justify-content: space-between;
+                display: flex;
+            }
+
+            button{
+                cursor: pointer;
+                @media (max-width:624px ) {
+                    width: 50%;
+                }
+            }    
+        }
+       
         @media (max-width:624px ) {
-            display: none;
+            flex-direction: column;
         }
         button {
             width: 130px;
             height: 30px;
-            border-radius: 15px;
+            /* border-radius: 15px; */
             background:#ffffff;
             border: none;
             box-shadow: 0 4px 4px rgba(131, 67, 67, 0.25);

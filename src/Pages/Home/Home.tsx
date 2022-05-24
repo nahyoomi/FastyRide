@@ -24,7 +24,7 @@ function Home() {
           <Filter />
           <Cards places={places} /> 
         </>  
-        : <h3> Buscar un lugar</h3>
+        : <h3> Look for your Favorite places</h3>
       }
       
     </section> 

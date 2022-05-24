@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import { AuthContext } from '../../Contexts/DataContext';
 import { useForm, SubmitHandler } from "react-hook-form";
 import { IFormInput, Props } from '../../Interfaces/Place';
 import { getPlace,getWordPlace } from '../../Utils/Service';
@@ -11,10 +12,10 @@ import swal from 'sweetalert';
 
 export default function SearchBar({setPlace}: Props) {
   const {register,formState: {errors}, handleSubmit} = useForm<IFormInput>();
-  const [city, setCity] = useState("");
+  const  {dataUser, setDataUser}:any = useContext (AuthContext)
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    setCity(data.location)
+    setDataUser({city:data.location,word:data.word})
     if (data.word.length>0){
       getWordPlace(data.location, data.word)
       .then(res => {
@@ -30,6 +31,9 @@ export default function SearchBar({setPlace}: Props) {
       getPlace(data.location)
       .then(res => {
         console.log(data.location)
+        if(res.results <=0){
+          swal("The place you are looking for is not in our list")
+        }
         setPlace(res.results)
       })
     .catch(err => {
@@ -48,11 +52,11 @@ export default function SearchBar({setPlace}: Props) {
           <input {...register(("location"),{required:true, maxLength:50, minLength:3})}
             className={styles.searchInput}
             type='text'
-            placeholder='lugares ej cali ?'/>
+            placeholder='Search by City'/>
             <input {...register(("word"))}
             className={styles.searchInput}
             type='text'
-            placeholder='categoria, palabra clave?'/>
+            placeholder='Search by key words'/>
             <button className={styles.searchBtn}>  
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </button>

@@ -28,6 +28,22 @@
             margin: auto;
             overflow: hidden;
             border-radius: 5px 5px 0px 0px;
+            .cardRate{
+                background-color: yellow;
+                padding: 5px;
+                font-weight: 700;
+                border-radius: 20px;
+                display: flex;
+                width: 35px;
+                height: 23px;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                z-index: 10;
+                bottom: 18px;
+                left: 12px;
+                font-size: 12px;
+            }
             .cardImg {
                 cursor: pointer;
                 height: 250px;

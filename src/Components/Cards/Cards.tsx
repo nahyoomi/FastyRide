@@ -78,7 +78,7 @@ useEffect(()=>{
                   <p className={styles.cardIcon}  >
                     <img src={`${item.categories[0].icon.prefix}30${item.categories[0].icon.suffix}`} /* alt={item.name} *//> 
                   </p>
-                   
+                 <span className={styles.cardRate}> {item.rating} </span>  
                 </div>
                 
                 <div className={styles.cardInfo}>
