@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import { AuthContext } from '../../Contexts/DataContext';
+import { PropsCard } from '../../Interfaces/Place';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 const containerStyle = {
@@ -6,12 +8,16 @@ const containerStyle = {
   height: '100%'
 };
 
-const center = {
-  lat: 40.74236,
-  lng: -73.988095
-};
+
+
 
 function Map() {
+  const {placeDetails, setPlaceDetails}:any = useContext(AuthContext)
+  const center = {
+    lat: placeDetails.geocodes.main.latitude,
+    lng: placeDetails.geocodes.main.longitude
+  };
+ 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyCTP-QHMC05OTLZHIsp08JcK975S44vCDQ"
@@ -33,7 +39,7 @@ function Map() {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={9}
+        zoom={12}
         onLoad={onLoad}
         onUnmount={onUnmount}
       >

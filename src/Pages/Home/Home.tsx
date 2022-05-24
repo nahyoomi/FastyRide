@@ -4,6 +4,7 @@ import Cards from '../../Components/Cards/Cards'
 import Layout from '../../Components/Layout/Layout'
 import SearchBar from '../../Components/SearchBar/SearchBar'
 import { PlaceInterface, Props} from '../../Interfaces/Place';
+import Filter from '../../Components/Filter/Filter';
 
 
 function Home() {
@@ -18,9 +19,14 @@ function Home() {
       <SearchBar setPlace={setPlaces} />
       {
         places.length > 0 
-        ? <Cards places={places} /> 
-        : <h3> Buscar un lugar</h3>
+        ? 
+        <>
+          <Filter />
+          <Cards places={places} /> 
+        </>  
+        : <h3> Look for your Favorite places</h3>
       }
+      
     </section> 
   </Layout>
 )

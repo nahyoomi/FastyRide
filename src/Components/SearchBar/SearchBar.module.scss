@@ -1,36 +1,44 @@
 .searchBox {
     width: 100%;
-    height: 350px;
+    height: 215px;
     padding: 30px;
     display: inline-block;
     margin: auto;
-    background-size: cover;
-    background-position: center;
-    background-image: url('https://images.pexels.com/photos/754595/pexels-photo-754595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size:cover;
+    background-position:center;
+    background-image: url('https://img.freepik.com/free-photo/abstract-solid-shining-yellow-gradient-studio-wall-room-background_1258-54539.jpg?t=st=1653325003~exp=1653325603~hmac=daa19397594410d2f487ba0e5272296ed5d77302e194a21aace807b77f7031a7&w=1060');
     .tittle {
         text-align: center;
         color: #272343;
         font-size: 24px;
         font-weight: 100;
     }
-    .searchInput {
+    .searchBars {
         width: 100%;
-        padding: 15px 45px 15px 15px;
-        background-color: #fffffe;
-        box-shadow: 0 4px 4px rgba(131, 67, 67, 0.25);
-        border-radius: 50px;
-        border:none;
-        transition: all .4s;
-        letter-spacing: 1px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
         
-        &:focus {
+        .searchInput {
+            width: 40%;
+            padding: 15px 15px 15px 15px;
+            background-color: #fffffe;
+            box-shadow: 0 4px 4px rgba(131, 67, 67, 0.25);
+            border-radius: 50px;
             border:none;
-            outline:none;
-            box-shadow: 0 1px 12px #b8c6db;
-            -moz-box-shadow: 0 1px 12px #b8c6db;
-            -webkit-box-shadow: 0 1px 12px #b8c6db;
-        }
+            transition: all .4s;
+            letter-spacing: 1px;
+            
+            &:focus {
+                border:none;
+                outline:none;
+                box-shadow: 0 1px 12px #b8c6db;
+                -moz-box-shadow: 0 1px 12px #b8c6db;
+                -webkit-box-shadow: 0 1px 12px #b8c6db;
+            }
+        } 
     }
+    
     .errorMsg {
         color: #bf1650;
         padding-left: 12px;
@@ -43,7 +51,11 @@
         background-color: transparent;
         font-size: 18px;
         padding: 6px 9px;
-        margin-left:-45px;
+        background-color: #fffffe;
+        box-shadow: 0 4px 4px rgba(131, 67, 67, 0.25);
+        border-radius: 50px;
+        right: 3px;
+        top: 7px;
         border:none;
         color: #272343;
         transition: all .4s;

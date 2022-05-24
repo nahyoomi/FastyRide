@@ -1,28 +1,33 @@
-import React from 'react'
+import React, {useState, useContext} from 'react'
+import { AuthContext } from '../../Contexts/DataContext'
 import Select from 'react-select'
 import styles from './Filter.module.scss'
+import { getPlaceBestRate } from '../../Utils/Service'
 
-const options = [
-    { value: 'supermarket', label: 'Supermarket' },
-    { value: 'restaurants', label: 'Restaurants' },
-    { value: 'pharmacy', label: 'Pharmacy' },
-    { value: 'hotels', label: 'Hotels' },
-
-  ]
 
 function Filter() {
+const  {dataUser, setPlaces}:any = useContext (AuthContext)
+
+const BestRate =()=>{
+  const { city, word } = dataUser
+  console.log(city,word)
+  getPlaceBestRate(city,word)
+    .then((res) => {
+      console.log("filter",res.results)
+      setPlaces(res.results)
+  })
+}
+
   return (
     <div className={styles.container}>
         <div className={styles.containerDesktop}>
-            <button type='button'>Supermarket</button>  
-            <button type='button'>Restaurants</button>    
-            <button type='button'>Pharmacy</button>  
-            <button type='button'>Hotels</button>
+            <p>Filter by: </p>
+            <div className={styles.containerButton} >
+              <button type='button' onClick={BestRate}>Best Rate</button>  
+              <button type='button'>Best Price</button>
+            </div>
+                
         </div>
-        <div className={styles.containerMobile}>
-        <Select options={options} />
-        </div>
-          
     </div>
   )
 }

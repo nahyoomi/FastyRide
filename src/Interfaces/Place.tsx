@@ -1,38 +1,110 @@
 export interface PlaceInterface {
-    "fsq_id": string
-    "categories": [
-      {
-        "id": number
-        "name": string
-        "icon": {
-          "prefix": string
-          "suffix":string
-        }
+  fsq_id: string,
+  categories: [
+    {
+      id: number,
+      name: string,
+      icon: {
+        prefix: string,
+        suffix: string
       }
+    }
+  ],
+  description: string,
+  geocodes: {
+    main: {
+      latitude: number,
+      longitude: number
+    }
+  },
+  hours: {
+    is_local_holiday: boolean,
+    open_now: boolean,
+    seasonal: []
+  },
+  location: {
+    address: string,
+    census_block: number,
+    country: string,
+    cross_street: string,
+    dma: string,
+    formatted_address: string,
+    locality: string,
+    neighborhood: [
+      string
     ],
-    "chains": [],
-    "distance": number
-    "geocodes": {
-      "main": {
-        "latitude": number
-        "longitude": number
-      }
+    postcode: string,
+    region: string
+  },
+  name: string,
+  photos: [
+    {
+      id: string,
+      created_at:string,
+      prefix: string,
+      suffix: string,
+      width: number,
+      height: number
     },
-    "link": string
-    "location": {
-      "address": string
-      "admin_region":string
-      "country":string
-      "cross_street": string
-      "formatted_address": string
-      "locality": string
-      "postcode": string
-      "region": string
+    {
+      id: string,
+      created_at: string,
+      prefix: string,
+      suffix: string,
+      width: number,
+      height: number
     },
-    "name": string
-    "related_places": {},
-    "timezone": string
-  }
+    {
+      id: string,
+      created_at:string,
+      prefix: string,
+      suffix: string,
+      width: number,
+      height: number
+    },
+    {
+      id: string,
+      created_at: string,
+      prefix: string,
+      suffix:string,
+      width: number,
+      height: number
+    },
+    {
+      id: string,
+      created_at: string,
+      prefix: string,
+      suffix: string,
+      width: number,
+      height: number
+    }
+  ],
+  rating: number,
+  tel: string,
+  tips: [
+    {
+      created_at: string,
+      text: string
+    },
+    {
+      created_at: string,
+      text: string
+    },
+    {
+      created_at: string,
+      text: string
+    },
+    {
+      created_at: string,
+      text: string
+    },
+    {
+      created_at: string,
+      text:string
+    }
+  ],
+  website: string
+}
 
   export interface IFormInput {
     location: string;
