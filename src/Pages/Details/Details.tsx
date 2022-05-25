@@ -44,7 +44,7 @@ function Details() {
                 <p className={styles.location}>{placeDetails.location.formatted_address}</p>
                 <p className={styles.description}>{placeDetails.description}</p>
                 <ul>
-                  <li className={styles.information} > <strong>Category:: </strong><span className= {`${placeDetails.hours.open_now ? styles.isOpen : styles.isClose}`} > {placeDetails.hours.open_now ? "Open Now" : "Closed Now"} </span> </li>
+                  <li className={styles.information} > <strong>Schedule: </strong><span className= {`${placeDetails.hours.open_now ? styles.isOpen : styles.isClose}`} > {placeDetails.hours.open_now ? "Open Now" : "Closed Now"} </span> </li>
                   <li className={styles.information} > <strong>Holiday: </strong> <span className= {`${placeDetails.hours.is_local_holiday ? styles.isOpen : styles.isClose}`} > {placeDetails.hours.is_local_holiday ? "Open on Holiday" : "No open on Holiday"} </span> </li>
                   <li className={styles.information} > <strong>Tel: </strong> {placeDetails.tel} </li>
                   <li className={styles.information} > <a target="_blank" href={placeDetails.website} >{placeDetails.website}</a>  </li>
