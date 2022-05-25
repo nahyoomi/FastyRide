@@ -14,7 +14,7 @@
     }
     .imgCard {
         width:350px;
-        height: 350px;
+        height: 394px;
         position: relative;
         border-radius: 5px;
         text-align: left;
@@ -76,6 +76,12 @@
 
 .cardInfo {
     padding: 10px;
+    .moreDetails{
+        text-decoration: underline;
+        color: blue;
+        cursor: pointer;
+        padding: 5px 5px 5px 0px;
+    }
 }
 .address  {
     color: #7d7676;
@@ -89,9 +95,7 @@
     top: 9px;
     font-size: 20px;
     left: 16px;
-    /* cursor: pointer; */
     &:hover{
-        /* color: red; */
        transform: scale(1.1);
     }
 }

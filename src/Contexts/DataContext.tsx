@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const AuthContext = createContext({})
 
 interface Props {
-    children:any
+    children:JSX.Element
 }
 
 export function DataContextProvider(props:Props){

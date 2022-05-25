@@ -1,7 +1,6 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useMemo } from 'react'
 import { AuthContext } from '../../Contexts/DataContext';
-import { PropsCard } from '../../Interfaces/Place';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '100%',
@@ -13,10 +12,7 @@ const containerStyle = {
 
 function Map() {
   const {placeDetails, setPlaceDetails}:any = useContext(AuthContext)
-  const center = {
-    lat: placeDetails.geocodes.main.latitude,
-    lng: placeDetails.geocodes.main.longitude
-  };
+  const center = useMemo(() => ({lat: placeDetails.geocodes.main.latitude, lng: placeDetails.geocodes.main.longitude}),[]) ;
  
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -39,12 +35,13 @@ function Map() {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={12}
+        zoom={15}
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
+       <Marker
+      position={center}
+      />
       </GoogleMap>
   ) : <></>
 }

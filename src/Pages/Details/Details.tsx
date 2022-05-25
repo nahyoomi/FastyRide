@@ -1,29 +1,25 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { AuthContext } from '../../Contexts/DataContext';
 import Layout from '../../Components/Layout/Layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import styles from './Details.module.scss'
-import Weather from '../../Components/Weather/Weather';
-import { useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import { getPlaceById } from '../../Utils/Service';
-import   { PlaceInterface } from "../../Interfaces/Place"
 import Map from '../../Components/Map/Map';
 
 
 
 function Details() {
 
-  let { id  }  = useParams();
+  let { id }  = useParams();
   const {placeDetails, setPlaceDetails}:any = useContext(AuthContext)
 
   useEffect(() => {
     
   getPlaceById(id)
   .then(res => {
-    /* console.log("response details:",res) */
     setPlaceDetails(res)
-    /* console.log("placedetails:",placeDetails) */
   })
 .catch(err => console.error(err));
 
@@ -34,7 +30,7 @@ function Details() {
       <>
       <Layout>
         { placeDetails <= 0 
-          ? <p> Loadding....</p>
+          ? <p> Loading....</p>
           :  
           <div className={styles.container}>
             <div className={styles.allDetails}>
@@ -45,12 +41,15 @@ function Details() {
             <div className={styles.placeDetails}>
               <div className={styles.chart}>
                 <p className={styles.place}> {placeDetails.name} <span className={styles.rate}><FontAwesomeIcon icon={faStar} /> {placeDetails.rating} </span></p>
-                <p className={styles.location}>{placeDetails.location.locality}</p>
-                <p className={styles.description}> {placeDetails.location.formatted_address}</p>
-                <div className={styles.more}>
-                  <Weather />
-                </div>
-                
+                <p className={styles.location}>{placeDetails.location.formatted_address}</p>
+                <p className={styles.description}>{placeDetails.description}</p>
+                <ul>
+                  <li className={styles.information} > <strong>Category:: </strong><span className= {`${placeDetails.hours.open_now ? styles.isOpen : styles.isClose}`} > {placeDetails.hours.open_now ? "Open Now" : "Closed Now"} </span> </li>
+                  <li className={styles.information} > <strong>Holiday: </strong> <span className= {`${placeDetails.hours.is_local_holiday ? styles.isOpen : styles.isClose}`} > {placeDetails.hours.is_local_holiday ? "Open on Holiday" : "No open on Holiday"} </span> </li>
+                  <li className={styles.information} > <strong>Tel: </strong> {placeDetails.tel} </li>
+                  <li className={styles.information} > <a target="_blank" href={placeDetails.website} >{placeDetails.website}</a>  </li>
+                </ul>
+                <br />           
               </div>
             </div>
             </div>

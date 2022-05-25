@@ -1,8 +1,7 @@
 
 export const filtered = (array:any,id:any) => {
-    console.log( array, id)
      return array.find((element:any) => element.fsq_id === id)
-  } 
+} 
   
 export const compareWish = (Localarray:any, places:any) => {
   places.filter((item:any)=>{
@@ -14,4 +13,3 @@ export const compareWish = (Localarray:any, places:any) => {
   })
   
 }
-

@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../Contexts/DataContext";
-import { NavLink,useNavigate  } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 import styles from "./Cards.module.scss";
 import { PlaceInterface, PropsCard } from "../../Interfaces/Place";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faV } from '@fortawesome/free-solid-svg-icons'; 
-import {compareWish, filtered} from "../../Services/Placeservices"
+import { faHeart } from '@fortawesome/free-solid-svg-icons'; 
+import { filtered} from "../../Services/Placeservices"
 import Popup from 'reactjs-popup';
 import swal from 'sweetalert'
 
@@ -17,25 +17,22 @@ function Cards({ places }: PropsCard) {
     const  {locasStores, setLocasStores}:any = useContext(AuthContext)
     const [active, setActive] = useState(false)
 
-//modal
 const closeModal = () => setOpen(false);
 
 const handleWishlist =(item:PlaceInterface)=>{
 
 
   const fil = filtered(locasStores, item.fsq_id) 
-  console.log( "filtrado: ", fil)
   if(fil === undefined){
     setLocasStores([
       ...locasStores,
       item
     ])
     setActive(true)
-    swal("add a tu lista deseos")
+    swal("Add to favorites")
     localStorage.setItem('wishList',JSON.stringify(locasStores))
-    console.log("localstores de cards",locasStores)
   }else{
-    swal("elento ya se encuentra en tu lista deseos")
+    swal("Element is already on your list")
   }
   
 }
@@ -43,7 +40,6 @@ const handleWishlist =(item:PlaceInterface)=>{
 const handleImag = (item:any) => {
   setOpen(o => !o)
   setPhotos(item.photos)
-  console.log(photos)
 } 
 
 const handleCard = (item:PlaceInterface) => {
@@ -52,19 +48,15 @@ const handleCard = (item:PlaceInterface) => {
 }
 
 useEffect(()=>{
-  console.log("array encontrado", locasStores)
 },[locasStores, photos])
 
   return (
     <>
       <ul className={styles.allCards}>
         {places.map((item) => (
-         /*  <NavLink 
-          className={styles.linkDetails}
-          to ='/details'> */
             <li key={item.fsq_id} className={`${styles.cards} ${active ? "active": "desactive"}`} >
             <div className={`${styles.imgCard}`}>
-                <div className={styles.cardImage}  /* onClick={handleModalOpen} */>
+                <div className={styles.cardImage} >
                 
                   <span className={styles.cardCaption}>
                     {item.location.locality}
@@ -91,13 +83,13 @@ useEffect(()=>{
                   </p>
                   <p> {item.categories[0].name} </p>
                   <p className={styles.address}>{item.location.formatted_address}</p>
-                  <p onClick= {()=>{handleCard(item)}}> more detailed information ...</p>
+                  <p className={styles.moreDetails} onClick= {()=>{handleCard(item)}}> more detailed information</p>
 
                 </div>
                 
             </div>
           </li>
-        /*   </NavLink> */
+
         ))}
       </ul>
       <Popup open={open} closeOnDocumentClick onClose={closeModal}>
