@@ -13,6 +13,7 @@ export function DataContextProvider(props:Props){
     const [dataUser, setDataUser ]= useState({city:"",word:""});
     const valor = {places, setPlaces ,locasStores, setLocasStores,dataUser,setDataUser,placeDetails, setPlaceDetails};
 
+    
     return (
         <AuthContext.Provider value={valor}>
             {props.children}
