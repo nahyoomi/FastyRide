@@ -9,7 +9,6 @@ function Favorites() {
 
   const getDataLocal = () => {
     let datalocal = JSON.parse(localStorage.getItem("wishList") || '{}');
-    console.log('locasstores sacado',datalocal)
     setLocasStores(datalocal)
     return datalocal
   }; 
@@ -18,7 +17,6 @@ function Favorites() {
     if(locasStores.length<=0){
       getDataLocal()
     }
-    console.log("favoritos",locasStores)
   }, []);
 
   return (

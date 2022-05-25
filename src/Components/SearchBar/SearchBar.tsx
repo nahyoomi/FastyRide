@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, { useContext} from 'react'
 import { AuthContext } from '../../Contexts/DataContext';
 import { useForm, SubmitHandler } from "react-hook-form";
 import { IFormInput, Props } from '../../Interfaces/Place';
@@ -6,7 +6,6 @@ import { getPlace,getWordPlace } from '../../Utils/Service';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'; 
 import styles from './SearchBar.module.scss'
-import Weather from '../Weather/Weather';
 import swal from 'sweetalert';
 
 
@@ -19,7 +18,6 @@ export default function SearchBar({setPlace}: Props) {
     if (data.word.length>0){
       getWordPlace(data.location, data.word)
       .then(res => {
-        console.log(res.results)
         if(res.results.length<=0){
           swal("Check your search fields the searched places do not exist")
         }
@@ -30,14 +28,12 @@ export default function SearchBar({setPlace}: Props) {
     }else {
       getPlace(data.location)
       .then(res => {
-        console.log(data.location)
         if(res.results <=0){
           swal("The place you are looking for is not in our list")
         }
         setPlace(res.results)
       })
     .catch(err => {
-      console.error(err.response.data.message)
       swal(err.response.data.message)
 
     });

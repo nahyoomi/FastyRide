@@ -1,14 +1,10 @@
 import styles from './Header.module.scss'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import Menu from '../Menu/Menu'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faHouse, faLandmark } from '@fortawesome/free-solid-svg-icons';
 
-/* interface classState {
-  activeObject: null | {id: number}
-    objects: Array<{id: number, name:string, route: string}>
-} */
 
 function Header() {
 const [stylish, setStylish]= useState(false);

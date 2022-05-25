@@ -112,8 +112,6 @@ export interface PlaceInterface {
   }
 
   export interface Props {
-  /*   city:string,
-    setCity:React.Dispatch<React.SetStateAction<string>>, */
     setPlace:React.Dispatch<React.SetStateAction<PlaceInterface[]>>
   }
   export interface PropsCard {
